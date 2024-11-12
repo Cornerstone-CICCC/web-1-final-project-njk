@@ -1,0 +1,17 @@
+.menu ul {
+    display: flex;
+    list-style: none;
+    background-color: #F8F6F4;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    font-size: 1.25rem;
+    margin: 0;
+
+    li {
+        a {
+            color: #725A58;
+            text-decoration: none;
+        }
+    }
+}
