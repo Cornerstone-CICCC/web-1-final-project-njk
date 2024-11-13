@@ -1,17 +1,139 @@
-.menu ul {
-    display: flex;
-    list-style: none;
-    background-color: #F8F6F4;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 4rem;
-    font-size: 1.25rem;
-    margin: 0;
+@import '../partials/variables';
 
-    li {
-        a {
-            color: #725A58;
-            text-decoration: none;
-        }
+body {
+    margin: 0;
+    width: fit-content;
+    min-width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: $menu-color;
+    .menu-container {
+        padding-right: 1.5rem;
+        padding-left: 3rem;
+        display: flex;
+        align-items: center;
     }
+    
+    .menu-container:last-child {
+        justify-content: flex-start;
+        
+    }
+    
+    .header-instagram img {
+        width: 2rem;
+    }
+    
+    .menu {
+        display: flex;
+        list-style: none;
+        padding: 2.25rem;
+        font-size: 1.5rem;
+        margin: 0;
+        align-items: center;
+        gap: 2rem;
+    
+        div {
+            display: flex;
+            gap: 2.5rem;
+
+                a {
+                    color: #725A58;
+                    text-decoration: none;
+                }
+        }
+    
+    }
+    
+    .separator {
+        background-color: #E3B6B1;
+        width: 2px;
+    }
+    
+    .logo {
+        padding: 0 1rem;
+        margin: 0;
+    }   
+}
+
+
+
+@media (max-width: 800px) {
+    .menu-container{
+        padding: 0 3rem;
+        gap: 10rem;
+        
+        .menu {
+            gap: 10rem;
+            .header-instagram img {
+                width: 50px;
+            }
+        }
+
+        .hamburger-menu {
+            height: 50px;
+            width: 50px;
+            margin-right: auto;
+            position: relative;
+
+            span {
+                height: 3px;
+                width: 100%;
+                background-color: #725A58;
+                position: absolute;
+                top: 50%;
+            }
+            
+            span:first-child {
+                top: 25%;
+            }
+            
+            span:last-child {
+                top: 75%;
+            }
+
+        }
+
+        .menu .header-menu {        
+            background-color: $mobile-menu-color;
+            height: 50vh;
+            width: 100%;
+            max-width: 450px;
+            position: fixed;
+            left: -450px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-size: 2rem;
+            transition: .3s ease-in-out;
+
+            span {
+                display: none;
+            }
+
+            a {
+                display: flex;
+
+            }
+        }
+
+        .menu .header-menu#left-menu {   
+            padding-top: 100px;     
+            top: 0;
+        }
+
+        .menu .header-menu#right-menu {        
+            padding-bottom: 100px;
+            bottom: 0;
+        }
+
+        
+    }
+
+
 }
