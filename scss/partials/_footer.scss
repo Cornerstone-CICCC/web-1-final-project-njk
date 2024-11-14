@@ -21,6 +21,7 @@ footer {
                 p {
                     margin: 0;
                     color: #191919;
+                    text-align: center;
                 }
             }
         }
@@ -63,12 +64,33 @@ footer {
             p {
                 margin: 0;
                 color: #725A58;
+                text-align: center;
             }
         }
     }
 }
 
-// @media screen (min-width: 800px) {
-    
-// }
+@media (min-width: 800px) {
+    footer {
+        .footer-container {
+            .footer-menu{
+                gap: 2rem;
+                margin: 0 2rem;
+                padding: 1.625rem .5rem;
+                .footer-menu-left {
+                    flex-direction: row;
+                    padding: 0;
+                    padding-right: 0.5rem;
+                    gap: 5rem;
+                }
+                .footer-menu-right {
+                    flex-direction: row;
+                    padding: 0;
+                    padding-left: 0.5rem;
+                    gap: 5rem;
+                }
+            }
+        }
+    }
+}
 
