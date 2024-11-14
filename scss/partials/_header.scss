@@ -79,13 +79,17 @@ header {
             width: 50px;
             margin-right: auto;
             position: relative;
+            transition: .3s ease-in-out;
 
             span {
+                z-index: 10;
                 height: 3px;
                 width: 100%;
                 background-color: #725A58;
                 position: absolute;
                 top: 50%;
+                transform: translate(-50%, -50%);
+                transition: .3s ease-in-out;
             }
             
             span:first-child {
@@ -98,9 +102,25 @@ header {
 
         }
 
+        .hamburger-menu.active {
+            span:nth-child(1) {
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            span:nth-child(2) {
+                opacity: 0;
+            }
+
+            span:nth-child(3) {
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+
         .menu .header-menu {        
             background-color: $mobile-menu-color;
-            height: 50vh;
+            min-height: 50vh;
             width: 100%;
             max-width: 450px;
             position: fixed;
@@ -122,8 +142,12 @@ header {
             }
         }
 
+        .menu .header-menu.active {
+            left: 0;
+        }
+
         .menu .header-menu#left-menu {   
-            padding-top: 100px;     
+            padding-top: 100px;
             top: 0;
         }
 
