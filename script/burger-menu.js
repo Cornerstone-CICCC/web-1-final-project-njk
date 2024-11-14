@@ -1,9 +1,7 @@
 const hamMenu = document.querySelector('.hamburger-menu')
-const headMenuLeft = document.querySelector('#left-menu')
-const headMenuRight = document.querySelector('#right-menu')
+const hiddenMenu = document.querySelector('.header-menu-hidden')
 
 hamMenu.addEventListener('click', () => {
     hamMenu.classList.toggle('active')
-    headMenuLeft.classList.toggle('active')
-    headMenuRight.classList.toggle('active')
+    hiddenMenu.classList.toggle('active')
 })
