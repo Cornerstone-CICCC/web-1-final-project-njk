@@ -1,13 +1,29 @@
 /* color */
 $background-color: #fbfafa;
+$background-color-2: #fae9e7;
 $primary-color: #000000;
 $secondary-color: #888888;
-$background-color-2: #FAE9E7;
-$accent-color: #E3B6B1;
+$accent-color: #e3b6b1;
 $bold-main-color: #644f4e;
-$complementary-color: #A06D67;
-$complementary-color-2: #B99692;
+$complementary-color: #a06d67;
+$complementary-color-2: #b99692;
+$title-color: #5e4a49;
 
 /* font */
 $font-stack: "Baskerville", sans-serif;
 $paragraph-font: "Avenir", sans-serif;
+
+/* media query */
+$sizes: xl, lg, md, sm, xs; 
+$breakpoint: ( 
+  'xs': 'screen and (min-width: 321px)',
+  'sm': 'screen and (min-width: 376px)',
+  'md': 'screen and (min-width: 501px)',
+  'lg': 'screen and (min-width: 961px)',
+  'xl': 'screen and (min-width: 1201px)',
+) !default;
+@mixin mq($size: md) {
+  @media #{ map-get( $breakpoint, $size ) } {
+    @content;
+  }
+}

@@ -6,17 +6,22 @@
   align-items: center;
 }
 
+@mixin initial-setting {
+  width: 100%;
+  margin: 0 auto;
+  background-color: $background-color;
+}
+
 @mixin button-style {
   font-size: 20px;
   font-weight: 300;
   background-color: transparent;
   border: 1px solid $bold-main-color;
   color: $bold-main-color;
-  padding: 20px 40px;
+  padding: 15px 40px;
   line-height: 30px;
   &:hover {
     background-color: #b99692;
-    opacity: 0.6;
     color: #fff;
     transition: 0.3s;
     border: 1px solid #b99692;
@@ -41,23 +46,30 @@
 }
 
 .hero {
+  @include flex-center;
+  @include initial-setting;
   background-image: url("../images/hero_img.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%;
-  height: 80vh;
+  background-position: center;
   color: #fff;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 80vh;
 
   h1 {
     font-family: "WhiteFlower", sans-serif;
-    font-size: 8rem;
+    font-size: 3rem;
     padding-top: 17%;
     font-weight: 400;
     background: transparent;
+
+    @include mq("lg") {
+      font-size: 8rem;
+    }
   }
 
   p {
@@ -92,15 +104,23 @@
   width: 60%;
 
   .artist-desc {
-    display: flex;
+    @include flex-center;
+    flex-direction: column-reverse;
+    @include mq("lg") {
+      flex-direction: row;
+    }
   }
 
   .artist-desc-right {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    text-align: start;
-    padding: 6% 7%;
+    gap: 20px;
+    padding: 4% 5%;
+
+    @include mq("lg") {
+      justify-content: flex-start;
+      text-align: start;
+    }
 
     h3 {
       font-weight: 100;
@@ -109,6 +129,9 @@
 
     p {
       font-size: 18px;
+      @include mq("lg") {
+        width: 77%;
+      }
     }
 
     button {
@@ -117,13 +140,23 @@
   }
 
   .btn-section {
-    display: flex;
-    gap: 20px;
+    @include flex-center;
+    flex-direction: column;
+
+    @include mq("lg") {
+      flex-direction: row;
+      gap: 40px;
+    }
   }
 
   .logo-pink {
     width: 50px;
     height: 50px;
+    display: block;
+    margin: 0 auto;
+    @include mq("lg") {
+      margin: 0;
+    }
   }
 }
 
@@ -158,10 +191,15 @@
 
   .brand-list-images {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     justify-items: center;
     align-items: center;
+
+    @include mq("md") {
+      gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+    }
 
     img {
       max-width: 100%;
@@ -172,41 +210,61 @@
 
 .about-work {
   background-color: $background-color-2;
+  opacity: 0.9;
   width: 100%;
 
   .about-work-desc {
     @include flex-center;
     flex-direction: column;
+    padding: 8% 0% 4% 0%;
     gap: 40px;
-    padding: 50px;
   }
 
   h1 {
     @extend %title-style;
-    font-size: 80px;
+    font-size: 40px;
+
+    @include mq("lg") {
+      font-size: 80px;
+    }
+  }
+
+  .star-image {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 5%;
+
+    @include mq("lg") {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   .short-hr {
-    width: 10%;
+    width: 20%;
     margin: 0 auto;
     border: 0.5px solid $accent-color;
   }
 
   p {
     margin: 0 auto;
-    width: 30%;
+    width: 35%;
   }
 
-  button {
+  .my-work-btn {
     @include button-style;
   }
 
   .work-images {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    justify-items: center;
-    align-items: center;
 
     img {
       max-width: 100%;
@@ -215,11 +273,36 @@
   }
 
   .quote {
+    padding: 5% 0% 9% 0%;
+    @include flex-center;
+    flex-direction: column;
+    gap: 20px;
+
     p {
       font-size: 32px;
-      width: 50%;
+      width: 80%;
       font-weight: 300;
       font-family: $font-stack;
+
+      @include mq("lg") {
+        width: 50%;
+      }
+    }
+  }
+
+  .btn-area {
+    @include flex-center;
+    gap: 40px;
+    width: 20%;
+
+    button {
+      background: transparent;
+      border: none;
+    }
+
+    p {
+      font-family: "WhiteFlower", sans-serif;
+      font-size: 60px;
     }
   }
 }
@@ -227,52 +310,123 @@
 .about-style {
   @include flex-center;
   flex-direction: column;
+  padding: 8% 0%;
+  gap: 40px;
+  width: 100%;
+  background-color: $background-color;
 
   h1 {
     @extend %title-style;
-    font-size: 80px;
-    width: 50%;
+    font-size: 30px;
+
+    @include mq("lg") {
+      font-size: 80px;
+      width: 50%;
+    }
   }
 
   .short-hr {
-    width: 10%;
+    width: 20%;
     margin: 0 auto;
     border: 0.5px solid $accent-color;
   }
 
   p {
     margin: 0 auto;
-    width: 40%;
+
+    @include mq("lg") {
+      width: 40%;
+    }
   }
 
   button {
     @include button-style;
-    padding: 10px 10px;
+  }
+
+  .container {
+    margin-top: 5%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+    @include mq("lg") {
+      flex-direction: row;
+      gap: 100px;
+    }
+  }
+
+  .image-box {
+    position: relative;
+    width: 300px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 20px -20px $background-color,
+        20px -20px 0px 1px $complementary-color-2;
+    }
+  }
+
+  .label {
+    font-family: $font-stack;
+    position: absolute;
+    bottom: 10px;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: $accent-color;
+    padding: 5px 10px;
   }
 }
 
 .about-class {
-  background-color: $background-color-2;
-  width: 90%;
-  padding: 50px 0;
+  background-color: $background-color;
+  width: 100%;
+
+  .about-class-container {
+    margin: 0 auto;
+    padding: 70px 0;
+    width: 90%;
+    background-color: $background-color-2;
+  }
+
+  .class-content {
+    @include flex-center;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 50px;
+
+    @include mq("lg") {
+      gap: 40px;
+      flex-direction: row;
+    }
+  }
 
   .about-class-left {
     @include flex-center;
     flex-direction: column;
-    gap: 40px;
-  }
-
-  .class-content {
-    display: flex;
-    padding: 50px;
   }
 
   .class-desc {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     text-align: start;
-    padding: 6% 7%;
+    align-items: center;
+    padding: 4%;
+    width: 600px;
+    cursor: pointer;
 
     h3 {
       @extend %title-style;
@@ -294,26 +448,41 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 20px;
+  }
+
+  .class-detail {
+    width: 450px;
+  }
+
+  .class-btn {
+    display: block;
+    margin-left: 0;
   }
 
   h1 {
     @extend %title-style;
-    font-size: 80px;
-  }
+    font-size: 30px;
 
-  .short-hr {
-    width: 10%;
-    margin: 0 auto;
-    border: 0.5px solid $accent-color;
+    @include mq("lg") {
+      font-size: 80px;
+      width: 50%;
+    }
   }
 
   button {
     @include button-style;
+    width: 180px;
+  }
+
+  .class-content-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .class-images {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     justify-items: center;
     align-items: center;
@@ -326,9 +495,12 @@
 }
 
 .about-diy {
-  padding: 50px;
+  padding: 7% 0% 15% 0%;
   @include flex-center;
   flex-direction: column;
+  gap: 70px;
+  background-color: $background-color;
+  width: 100%;
 
   h1 {
     @extend %title-style;
@@ -352,6 +524,13 @@
 }
 
 .contact {
+  background-color: $background-color;
+  width: 100%;
+  padding-bottom: 10%;
+  @include flex-center;
+  flex-direction: column;
+  gap: 40px;
+
   h1 {
     @extend %title-style;
     font-size: 80px;
@@ -359,17 +538,26 @@
 
   p {
     margin: 0 auto;
-    width: 65%;
+    width: 60%;
   }
 
   .submit-button {
     @include button-style;
+  }
+
+  .section {
+    margin-top: 8%;
   }
 }
 
 .form-container {
   background-color: $background-color-2;
   padding: 60px;
+  width: 80%;
+
+  @include mq("lg") {
+    width: 60%;
+  }
 
   h2 {
     font-weight: 400;
@@ -380,11 +568,9 @@
 
 #services-form {
   gap: 20px;
-  width: 100%;
   text-align: left;
 
   label {
-    margin-bottom: 5px;
     font-size: 35px;
   }
 
@@ -435,6 +621,7 @@
 
   .section-row {
     display: flex;
+    margin-top: 8%;
     gap: 20px;
   }
 
@@ -445,16 +632,13 @@
 
   .radio-label {
     font-size: 18px;
+    margin-top: 25px;
     font-family: $paragraph-font;
   }
 
   .submit-button {
     @include button-style;
   }
-}
-
-.section {
-  margin-bottom: 20px;
 }
 
 .row {
@@ -467,8 +651,15 @@
 }
 
 .event-type {
+  margin-top: 4%;
   display: flex;
   gap: 10px;
+}
+
+#event-date,
+#event-time,
+#name {
+  margin-top: 25px;
 }
 
 input[type="text"],
@@ -498,6 +689,14 @@ select {
 .checkbox-label input,
 .radio-label input {
   margin-right: 8px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
 }
 
 @font-face {
