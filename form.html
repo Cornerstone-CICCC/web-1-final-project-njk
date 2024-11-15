@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services Form</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h2>Services</h2>
+    <form id="services-form">
+      <div class="section">
+        <label>Event Type</label>
+        <div class="event-type">
+          <button type="button" class="event-option selected">Wedding</button>
+          <button type="button" class="event-option">Party</button>
+          <button type="button" class="event-option">Photoshoot</button>
+        </div>
+      </div>
+      <div class="section-row">
+        <div class="column">
+          <label for="event-date">Event Date</label>
+          <input type="date" id="event-date" placeholder="Select Date">
+          <label class="checkbox-label">
+            <input type="checkbox"> Not decided
+          </label>
+        </div>
+        <div class="column">
+          <label for="event-time">Event Time</label>
+          <select id="event-time">
+            <option>Full day</option>
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+          </select>
+          <label class="checkbox-label">
+            <input type="checkbox"> Not decided
+          </label>
+        </div>
+      </div>
+
+      <div class="section">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your name">
+      </div>
+
+      <div class="section">
+        <label>Contact</label>
+        <label class="radio-label">
+          <input type="radio" name="contact" checked> Call
+        </label>
+        <input type="tel" placeholder="Your mobile number">
+        <label class="radio-label">
+          <input type="radio" name="contact"> WhatsApp
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="contact"> SMS
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="contact"> Email
+        </label>
+      </div>
+      <button type="submit" class="submit-button">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
