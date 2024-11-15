@@ -114,43 +114,72 @@ header {
             // burger menu animation: burger --> cross
             .hamburger-menu.active {
                 span:nth-child(1) {
-                    top: 35%;
+                    top: 50%;
                     transform: translate(-100%, -50%) rotate(-45deg);
-                    width: 50%;
                 }
     
                 span:nth-child(2) {
-                    transform: translate(-40%, -50%);
-                    width: 45px;
+                    opacity: 0;
                 }
     
                 span:nth-child(3) {
-                    top: 65%;
+                    top: 50%;
                     transform: translate(-100%, -50%) rotate(45deg);
-                    width: 50%;
                 }
             }
     
             .header-menu-hidden {        
-                background-color: $mobile-menu-color;
+                background-color: $menu-color;
                 min-height: 100%;
                 width: 100%;
-                max-width: 450px;
                 position: fixed;
-                left: -450px;
+                left: -100%;
                 top: 0;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                font-size: 2rem;
-                justify-content: space-evenly;
+                justify-content:space-around;
                 transition: .3s ease-in-out;
-    
-                a {
-                    display: flex;
-                    color: #725A58;
-                    text-decoration: none;
+
+                .mobile-menu-logo {
+                    margin: 0;
+                    padding-top: 4rem;  
+
+                    img{
+                        width: 6rem;
+                        
+                    }    
                 }
+                
+                .mobile-menu-links {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 1.625rem 0;
+                    gap: 1.5rem;
+
+                    a {
+                        display: flex;
+                        font-size: 1.75em;
+                        justify-content: center;
+                        color: #725A58;
+                        text-decoration: none;
+                    }
+                }
+
+                .mobile-menu-socials {
+                    display: flex;
+                    gap: 1.5rem;
+
+                    img {
+                        min-width: 2em;
+                    }
+                }
+
+                .mobile-menu-slogan {
+                    text-align: center;
+                    padding-bottom: 2rem;
+                }
+                
             }
     
             .header-menu-hidden.active {
