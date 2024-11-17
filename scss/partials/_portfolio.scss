@@ -10,7 +10,6 @@
         align-items: center;
 
         .hero-header {
-            margin-top: 12.25rem;
             padding-top: 2.5rem;
 
             h1 {
@@ -229,6 +228,56 @@
                 }
             }
             
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .portfolio {
+        .portfolio-gallery {
+            .portfolio-gallery-photos {
+                width: 90%;
+                .portfolio-gallery-photos-makeup.active {
+                    grid-template-columns: repeat(2, 1fr); 
+
+                }
+
+                .portfolio-gallery-photos-hairstyle.active {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                :nth-child(n+7) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .portfolio {
+        .portfolio-hero {
+            .hero-text {
+                p {
+                    max-width: 20rem;
+                }
+            }
+        }
+
+        .portfolio-gallery {
+            .portfolio-gallery-photos {
+                .portfolio-gallery-photos-makeup.active {
+                    grid-template-columns: 1fr;
+                }
+
+                .portfolio-gallery-photos-hairstyle.active {
+                    grid-template-columns: 1fr;
+                }
+
+                :nth-child(n+5) {
+                    display: none;
+                }
+            }
         }
     }
 }
