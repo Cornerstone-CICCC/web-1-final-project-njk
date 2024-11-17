@@ -61,6 +61,11 @@
                 width: 15.125rem;
                 align-items: center;
                 justify-content: center;
+                transition: .3s ease-in-out;
+
+                &:hover {
+                    background-color: #f2e1e0;
+                }
 
                 h5 {
                     font-size: 2rem;
@@ -87,6 +92,11 @@
                 width: 15.125rem;
                 align-items: center;
                 justify-content: center;
+                transition: .3s ease-in-out;
+
+                &:hover {
+                    background-color: #FAE9E7;
+                }
 
                 h5 {
                     font-size: 2rem;
@@ -110,6 +120,12 @@
                 width: 15.125rem;
                 align-items: center;
                 justify-content: center;
+                transition: .3s ease-in-out;
+
+                &:hover {
+                    background-color: #f2e1e0;
+                }
+                
 
                 h5 {
                     font-size: 2rem;
@@ -135,6 +151,11 @@
                 width: 15.125rem;
                 align-items: center;
                 justify-content: center;
+                transition: .3s ease-in-out;
+
+                &:hover {
+                    background-color: #FAE9E7;
+                }
 
                 h5 {
                     font-size: 2rem;
