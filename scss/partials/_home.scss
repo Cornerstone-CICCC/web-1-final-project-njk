@@ -111,6 +111,7 @@ body {
     flex-direction: column-reverse;
     align-items: center;
     top: 65%;
+    z-index: 100;
     right: 0px;
     position: fixed;
 
@@ -131,7 +132,6 @@ body {
     background: transparent;
     border: none;
     cursor: pointer;
-    z-index: 100;
     cursor: pointer;
     transition: transform 0.3s;
     @extend %flex-center;
