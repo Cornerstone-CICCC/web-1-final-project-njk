@@ -12,12 +12,15 @@ header {
     align-items: center;
     flex-wrap: wrap;
     background-color: $menu-color;
+    position: sticky;
+    top: 0;
 
     .menu-container {
         padding-right: 1.5rem;
         padding-left: 3rem;
         display: flex;
         align-items: center;
+
 
         .header-menu-hidden {
             display: none;
@@ -26,11 +29,12 @@ header {
         .menu {
             display: flex;
             list-style: none;
-            padding: 2.25rem;
+            padding: 2.25rem 0;
             font-size: 1.5rem;
             margin: 0;
             align-items: center;
             gap: 2rem;
+            transition: .25s ease-in-out;
         
             .header-menu {
                 display: flex;
@@ -51,7 +55,21 @@ header {
             .logo {
                 padding: 0 1rem;
                 margin: 0;
-            }  
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: .75rem;
+
+                #cb_logo {
+                    width: 5rem;
+                    transition: .25s ease-in-out;
+                }
+                #cb_logo_name {
+                    width: 7.85rem;
+                    height: auto;
+                    transition: .25s ease-in-out;
+                }
+            }    
         
         } 
         
@@ -71,12 +89,39 @@ header {
 @media (max-width: 800px) {
     
     header{
+        position: sticky;
+        top: 0;
         .menu-container{
             padding: 0 6rem;
             gap: 5rem;
+
+            .offscreen-menu {
+                .header-menu-hidden {
+                    .mobile-menu-logo {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: .75rem;
+
+                        #cb_logo {
+                            width: 5rem;
+                            transition: .25s ease-in-out;
+                        }
+                        #cb_logo_name {
+                            width: 7.85rem;
+                            height: auto;
+                            transition: .25s ease-in-out;
+                        }
+                    }
+                }
+            }
             
             .menu {
                 gap: 10rem;
+
+                logo {
+                    min-width: 160px;
+                }
                 
                 .header-instagram img {
                     width: 50px;
@@ -156,11 +201,10 @@ header {
                     flex-direction: column;
                     padding: 1.625rem 0;
                     gap: 1.5rem;
-                    // width: ;   
 
                     a {
                         display: flex;
-                        font-size: 1.75rem;
+                        font-size: 1.75em;
                         justify-content: center;
                         color: #725A58;
                         text-decoration: none;
@@ -190,10 +234,6 @@ header {
             .menu .header-menu {
                 display: none;
             }
-
         }
-    
     }
-    
-
 }
