@@ -433,6 +433,9 @@ body {
   .image-box {
     position: relative;
     width: 300px;
+    p {
+      font-family: $font-stack;
+    }
   }
 
   img {
