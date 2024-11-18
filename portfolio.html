@@ -13,6 +13,66 @@
     <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Space+Grotesk:wght@300..700&family=Young+Serif&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header>
+        <section class="menu-container">
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="offscreen-menu">
+                <div class="header-menu-hidden">
+                    <figure class ="mobile-menu-logo">
+                        <img id="cb_logo_mobile" src="./images/cb_logo.svg" alt="CB Logo">
+                        <img id="cb_logo_name_mobile" src="./images/cb_name.svg" alt="CB Logo Name">
+                    </figure>
+                    <div class="mobile-menu-links">
+                        <a href="#">Home</a>
+                        <a href="#">My Work</a>
+                        <a href="#">Services</a>
+                        <a href="#">Classes</a>
+                        <a href="#">Beauty Tips</a>
+                        <a href="#">About</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="mobile-menu-socials">
+                        <a href="#"><img src="./images/ph_phone.svg" alt="phone contact"></a>
+                        <a href="#"><img src="./images/ic_baseline-whatsapp.svg" alt="Whatsapp contact"></a>
+                        <a href="#"><img src="./images/iconoir_instagram.svg" alt="Instagram contact"></a>
+                    </div>
+                    <div class="mobile-menu-slogan">
+                        <p>Expert Makeup and Hairstyle Studio</p>
+                    </div>
+                </div>
+            </div>
+            <nav class="menu">
+                <div class="header-menu" id="left-menu">
+                    <a href="#">Home</a>
+                    <span class="separator"></span>
+                    <a href="#">My Work</a>
+                    <span class="separator"></span>
+                    <a href="#">Services</a>
+                    <span class="separator"></span>
+                    <a href="#">Classes</a>
+                </div>
+                <figure class ="logo">
+                    <img id="cb_logo" src="./images/cb_logo.svg" alt="CB Logo">
+                    <img id="cb_logo_name" src="./images/cb_name.svg" alt="CB Logo Name">
+                </figure>
+                <div class="header-menu" id="right-menu">
+                    <a href="#">Beauty Tips</a>
+                    <span class="separator"></span>
+                    <a href="#">About</a>
+                    <span class="separator"></span>
+                    <a href="#">Contact</a>
+                    <span class="separator"></span>
+                </div>
+                <div class="header-instagram">
+                    <a href="#"><img src="./images/iconoir_instagram.svg" alt="Instagram Page"></a>
+                </div>
+            </nav>
+        </section>
+    </header>
     <section class="portfolio">
         <div class="portfolio-hero">
             <div class="hero-header">
@@ -63,6 +123,41 @@
             </div>
         </div>
     </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-contact">
+                <div class="footer-logo">
+                    <img src="./images/Frame 144.svg" alt="Company Logo">
+                </div>
+                <div class="footer-slogan">
+                    <p>Expert Makeup and Hairstyle Studio</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="#"><img src="./images/ph_phone.svg" alt="phone contact"></a>
+                    <a href="#"><img src="./images/ic_baseline-whatsapp.svg" alt="Whatsapp contact"></a>
+                    <a href="#"><img src="./images/iconoir_instagram.svg" alt="instagrm"></a>
+                </div>
+            </div>
+            <div class="footer-menu">
+                <div class="footer-menu-left">
+                    <a href="#">Home</a>
+                    <a href="#">My Work</a>
+                    <a href="#">Services</a>
+                    <a href="#">Classes</a>
+                </div>
+                <div class="footer-menu-right">
+                    <a href="#">Beauty Tips</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>Copyright 2024, Carla Beauty</p>
+            </div>
+        </div>
+    </footer>
+    <script src="./script/burger-menu.js"></script>
+    <script src="./script/header-shrink.js"></script>
     <script src="./script/portfolio-gallery.js"></script>
 </body>
 </html>

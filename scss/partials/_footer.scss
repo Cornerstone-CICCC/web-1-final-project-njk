@@ -1,7 +1,4 @@
 footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
 
     .footer-container {
         display: flex;
@@ -23,6 +20,12 @@ footer {
                     color: #191919;
                     text-align: center;
                 }
+            }
+
+            .footer-socials {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
             }
         }
     
