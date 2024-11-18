@@ -1,4 +1,4 @@
-
+@import '../partials/variables';
 
 
 .heading{
@@ -164,6 +164,41 @@ img.chat\.icon{
 
 // }
 
+.brand-list {
+    color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  align-items: center;
+  
+    .title {
+      position: relative;
+      display: inline-block;
+      padding: 0 10px;
+      margin-bottom: 40px;
+    .brand-title {
+        font-size: 6rem;
+    }
+      
+    }
+  
+    .brand-list-images {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
+  
+      @include mq("md") {
+        grid-template-columns: repeat(2, 1fr);
+      }
+  
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
 
 
 
