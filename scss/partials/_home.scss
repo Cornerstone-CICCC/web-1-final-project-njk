@@ -10,7 +10,7 @@
   gap: $gap;
 
   @include mq("lg") {
-    gap: $gap / 2;
+    gap: calc($gap / 2)
   }
 }
 
