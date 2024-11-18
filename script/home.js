@@ -5,18 +5,40 @@ document.addEventListener("DOMContentLoaded", function () {
     "Carla Beauty's party makeup service was amazing! The makeup lasted all night, keeping me flawless until the end. Thank you, Carla for an unforgettable experience!",
   ];
 
-  const names = [
-    "Janny",
-    "Ingrid",
-    "Marcela",
-  ];
+  const names = ["Janny", "Ingrid", "Marcela"];
 
   let currentIndex = 0;
 
   function updateQuote() {
     document.getElementById("quote").textContent = quotes[currentIndex];
-    document.getElementById('quote-name').textContent = `${names[currentIndex]}`;
+    document.getElementById(
+      "quote-name"
+    ).textContent = `${names[currentIndex]}`;
   }
+
+  fetch("header.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("header-container").innerHTML = data;
+    });
+  fetch("footer.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("footer-container").innerHTML = data;
+    });
+
+  const chatButton = document.querySelector(".chat-btn");
+  const iconContainer = document.querySelector(".icon-container");
+  const chatIcon = document.getElementById("chat-icon");
+
+  chatButton.addEventListener("click", () => {
+    iconContainer.classList.toggle("open");
+    if (chatIcon.src.includes("chat_icon.svg")) {
+      chatIcon.src = "images/close_button.svg";
+    } else {
+      chatIcon.src = "images/chat_icon.svg";
+    }
+  });
 
   document.getElementById("next-btn").addEventListener("click", function () {
     currentIndex = (currentIndex + 1) % quotes.length;
