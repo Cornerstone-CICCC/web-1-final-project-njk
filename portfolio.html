@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carla Beauty</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,12 +27,12 @@
                         <img id="cb_logo_name_mobile" src="./images/cb_name.svg" alt="CB Logo Name">
                     </figure>
                     <div class="mobile-menu-links">
-                        <a href="#">Home</a>
-                        <a href="#">My Work</a>
-                        <a href="#">Services</a>
+                        <a href="./index.html">Home</a>
+                        <a href="./portfolio">My Work</a>
+                        <a href="./services.html">Services</a>
                         <a href="#">Classes</a>
                         <a href="#">Beauty Tips</a>
-                        <a href="#">About</a>
+                        <a href="./about.html">About</a>
                         <a href="#">Contact</a>
                     </div>
                     <div class="mobile-menu-socials">
@@ -47,11 +47,11 @@
             </div>
             <nav class="menu">
                 <div class="header-menu" id="left-menu">
-                    <a href="#">Home</a>
+                    <a href="./index.html">Home</a>
                     <span class="separator"></span>
-                    <a href="#">My Work</a>
+                    <a href="./portfolio.html">My Work</a>
                     <span class="separator"></span>
-                    <a href="#">Services</a>
+                    <a href="./services.html">Services</a>
                     <span class="separator"></span>
                     <a href="#">Classes</a>
                 </div>
@@ -62,7 +62,7 @@
                 <div class="header-menu" id="right-menu">
                     <a href="#">Beauty Tips</a>
                     <span class="separator"></span>
-                    <a href="#">About</a>
+                    <a href="./about.html">About</a>
                     <span class="separator"></span>
                     <a href="#">Contact</a>
                     <span class="separator"></span>
@@ -123,41 +123,22 @@
             </div>
         </div>
     </section>
-    <footer>
-        <div class="footer-container">
-            <div class="footer-contact">
-                <div class="footer-logo">
-                    <img src="./images/Frame 144.svg" alt="Company Logo">
-                </div>
-                <div class="footer-slogan">
-                    <p>Expert Makeup and Hairstyle Studio</p>
-                </div>
-                <div class="footer-socials">
-                    <a href="#"><img src="./images/ph_phone.svg" alt="phone contact"></a>
-                    <a href="#"><img src="./images/ic_baseline-whatsapp.svg" alt="Whatsapp contact"></a>
-                    <a href="#"><img src="./images/iconoir_instagram.svg" alt="instagrm"></a>
-                </div>
-            </div>
-            <div class="footer-menu">
-                <div class="footer-menu-left">
-                    <a href="#">Home</a>
-                    <a href="#">My Work</a>
-                    <a href="#">Services</a>
-                    <a href="#">Classes</a>
-                </div>
-                <div class="footer-menu-right">
-                    <a href="#">Beauty Tips</a>
-                    <a href="#">About</a>
-                    <a href="#">Contact</a>
-                </div>
-            </div>
-            <div class="footer-copyright">
-                <p>Copyright 2024, Carla Beauty</p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-container"></div>
     <script src="./script/burger-menu.js"></script>
     <script src="./script/header-shrink.js"></script>
     <script src="./script/portfolio-gallery.js"></script>
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-container").innerHTML = data;
+        });
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-container").innerHTML = data;
+        });
+    </script>
+
 </body>
 </html>

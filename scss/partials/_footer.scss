@@ -15,6 +15,7 @@ footer {
             flex-direction: column;
             align-items: center;
             gap: 1rem;
+            font-family: "Nunito";
     
             .footer-slogan {
                 p {
@@ -40,6 +41,7 @@ footer {
             justify-content: center;
             border-top: 1px solid #191919;
             border-bottom: 1px solid #191919;
+            font-family: "baskervville";
     
             .footer-menu-left {
                 display: flex;
@@ -70,6 +72,7 @@ footer {
                 margin: 0;
                 color: #725A58;
                 text-align: center;
+                font-family: "Nunito";
             }
         }
     }
