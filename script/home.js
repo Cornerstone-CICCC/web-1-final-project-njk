@@ -18,6 +18,18 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('quote-name').textContent = `${names[currentIndex]}`;
   }
 
+  // header.htmlとfooter.htmlの内容を読み込む
+  fetch("header.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("header-container").innerHTML = data;
+    });
+  fetch("footer.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("footer-container").innerHTML = data;
+    });
+
   document.getElementById("next-btn").addEventListener("click", function () {
     currentIndex = (currentIndex + 1) % quotes.length;
     updateQuote();
