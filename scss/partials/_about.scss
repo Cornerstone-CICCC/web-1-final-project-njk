@@ -1,0 +1,150 @@
+body{
+    margin: 0;
+    background-color: white;
+    
+}
+
+
+.heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    // gap: 40px;
+    background-color:  white;
+    // padding-top: 80px;
+    // padding-bottom: 80px;
+
+
+
+    h3{
+        font-family: "Baskervville";
+        font-size: 40px;
+        font-weight: 400;
+        letter-spacing: 0.13em;
+        text-align: center;
+        text-decoration-skip-ink: none;
+        color: #E3B6B1;
+        margin-bottom: 20px;
+    }    
+
+
+
+    
+    h1{
+    font-size: 80px;
+    text-align: center;
+    color: #725A58;
+    font-family: "Baskervville", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 0;
+    letter-spacing: 7px;
+    margin-bottom: 32px;
+    
+
+    }
+
+}
+
+
+.about{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 74px;
+    background-color:  #FAE9E7;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    height: 640px;
+
+    img{
+        max-width: 40%;
+        margin-left: 200px;
+    }
+
+}
+
+
+
+.about_content {
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 200px;
+    max-width: 50%;
+    
+
+
+    h3{
+        // top: 687px;
+        // right: 235px;
+        font-family: "Baskervville", serif;
+        font-size: 48px;
+        font-weight: 400;
+        color: #000000;
+        margin-top: 0;
+        margin-right: auto;
+
+    
+    }
+
+
+    p{
+        font-size: 18px;
+        margin: 0;
+    }
+
+    a {
+        display: flex;
+        flex-direction: column;
+        // display: inline-block;
+        text-decoration: none;
+        border: 0.8px solid #5E4A49;
+        color: #5E4A49;
+        font-size: 20px;
+        padding-top: 20px;
+        padding-right: 25px;
+        padding-bottom: 20px;
+        padding-left: 32px;
+        margin-right: auto;
+        margin-top: 26px;
+
+
+        
+    }
+
+
+    a:hover{
+        background-color: #725A58;
+        color: white;
+        transition: 0.2s ease-in-out;
+    }
+}
+
+
+img.chat\.icon{
+    position: absolute;
+    top: 580px; 
+    right: 0; 
+    width: 50px; 
+    height: auto;
+    cursor: pointer;
+    z-index: 1000; 
+    // width: auto;
+    
+}
+
+// .chat-icon {
+//     position: fixed;
+//     top: 50%; /* Adjust to vertically center or place it as needed */
+//     left: 0; /* Stick it to the left side of the page */
+//     transform: translateY(-50%); /* Center the icon vertically */
+//     max-width: 50px; /* Limit the width to ensure it doesn't overflow */
+//     max-height: 50px; /* Ensure height is within bounds */
+//     z-index: 1000; /* Place it above other content */
+// }
+
