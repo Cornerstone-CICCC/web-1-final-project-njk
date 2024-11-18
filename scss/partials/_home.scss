@@ -1,30 +1,36 @@
 @import "variables";
 
-@mixin flex-center {
+%flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-@mixin initial-setting {
-  width: 100%;
-  margin: 0 auto;
-  background-color: $background-color;
+@mixin gap($gap) {
+  gap: $gap;
+
+  @include mq("lg") {
+    gap: $gap / 2;
+  }
 }
 
 @mixin button-style {
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: 300;
+  font-family: $font-stack;
   background-color: transparent;
   border: 1px solid $bold-main-color;
   color: $bold-main-color;
   padding: 15px 40px;
-  line-height: 30px;
   &:hover {
-    background-color: #b99692;
-    color: #fff;
+    background-color: $complementary-color-2;
+    color: $background-color;
     transition: 0.3s;
-    border: 1px solid #b99692;
+    border: 1px solid $complementary-color-2;
+  }
+
+  @include mq("lg") {
+    padding: 8px 20px;
   }
 }
 
@@ -32,10 +38,35 @@
   letter-spacing: 13px;
   color: #725a58;
   font-weight: 400;
+  font-size: 5rem;
+
+  @include mq("md") {
+    font-size: 3rem;
+  }
+
+  @include mq("sm") {
+    font-size: 1.5rem;
+  }
+}
+
+html {
+  font-size: 16px;
+
+  @include mq("lg") {
+    font-size: 13px;
+  }
+}
+
+body {
+  font-family: $font-stack;
+  background-color: $background-color;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .home-page {
-  @include flex-center;
+  @extend %flex-center;
   flex-direction: column;
   min-height: 100vh;
   text-align: center;
@@ -46,29 +77,28 @@
 }
 
 .hero {
-  @include flex-center;
-  @include initial-setting;
+  @extend %flex-center;
   background-image: url("../images/hero_img.svg");
+  box-shadow: inset 0 -18em 7em rgba(0, 0, 0, 0.6);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  color: #fff;
+  color: $background-color;
   text-align: center;
-  display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
   height: 80vh;
 
   h1 {
     font-family: "WhiteFlower", sans-serif;
-    font-size: 3rem;
+    font-size: 7rem;
     padding-top: 17%;
     font-weight: 400;
     background: transparent;
+    margin: 0;
 
-    @include mq("lg") {
-      font-size: 8rem;
+    @include mq("md") {
+      font-size: 3rem;
     }
   }
 
@@ -79,35 +109,39 @@
   }
 
   button {
-    color: #fff;
-    font-size: 20px;
+    color: $background-color;
+    font-size: 1.2rem;
     background-color: transparent;
-    border: 1px solid #fff;
+    border: 1px solid $background-color;
     padding: 15px 39px;
     line-height: 30px;
     min-width: 160px;
+    font-family: $font-stack;
 
     &:hover {
-      background-color: #fff;
-      color: #000;
+      background-color: $background-color;
+      color: black;
       opacity: 0.7;
       transition: 0.3s;
     }
+
+    @include mq("lg") {
+      padding: 8px 20px;
+    } 
   }
 }
 
 .about-artist {
-  @include flex-center;
+  @extend %flex-center;
   flex-direction: column;
   gap: 40px;
   padding: 50px 0;
-  width: 60%;
 
   .artist-desc {
-    @include flex-center;
-    flex-direction: column-reverse;
+    @extend %flex-center;
+    flex-direction: row;
     @include mq("lg") {
-      flex-direction: row;
+      flex-direction: column-reverse;
     }
   }
 
@@ -116,22 +150,22 @@
     flex-direction: column;
     gap: 20px;
     padding: 4% 5%;
+    justify-content: flex-start;
+    text-align: start;
+    width: 60%;
 
     @include mq("lg") {
-      justify-content: flex-start;
-      text-align: start;
+      align-items: center;
+      text-align: center;
     }
 
     h3 {
       font-weight: 100;
-      font-size: 48px;
+      font-size: 3rem;
     }
 
     p {
       font-size: 18px;
-      @include mq("lg") {
-        width: 77%;
-      }
     }
 
     button {
@@ -140,12 +174,14 @@
   }
 
   .btn-section {
-    @include flex-center;
-    flex-direction: column;
+    @extend %flex-center;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: flex-start;
 
     @include mq("lg") {
-      flex-direction: row;
-      gap: 40px;
+      flex-direction: column;
+      gap: 20px;
     }
   }
 
@@ -153,10 +189,7 @@
     width: 50px;
     height: 50px;
     display: block;
-    margin: 0 auto;
-    @include mq("lg") {
-      margin: 0;
-    }
+    margin: 0;
   }
 }
 
@@ -177,7 +210,7 @@
       top: 50%;
       width: 100%;
       height: 0.5px;
-      background-color: #000;
+      background-color: black;
     }
 
     &::before {
@@ -191,14 +224,13 @@
 
   .brand-list-images {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     justify-items: center;
     align-items: center;
 
     @include mq("md") {
-      gap: 20px;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
 
     img {
@@ -211,10 +243,9 @@
 .about-work {
   background-color: $background-color-2;
   opacity: 0.9;
-  width: 100%;
 
   .about-work-desc {
-    @include flex-center;
+    @extend %flex-center;
     flex-direction: column;
     padding: 8% 0% 4% 0%;
     gap: 40px;
@@ -222,22 +253,17 @@
 
   h1 {
     @extend %title-style;
-    font-size: 40px;
-
-    @include mq("lg") {
-      font-size: 80px;
-    }
   }
 
   .star-image {
     display: grid;
-    width: 100%;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     padding: 5%;
 
     @include mq("lg") {
-      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      grid-template-columns: repeat(2, 1fr);
     }
 
     img {
@@ -251,11 +277,6 @@
     width: 20%;
     margin: 0 auto;
     border: 0.5px solid $accent-color;
-  }
-
-  p {
-    margin: 0 auto;
-    width: 35%;
   }
 
   .my-work-btn {
@@ -274,24 +295,25 @@
 
   .quote {
     padding: 5% 0% 9% 0%;
-    @include flex-center;
+    @extend %flex-center;
     flex-direction: column;
     gap: 20px;
 
     p {
+      margin: 0 auto;
       font-size: 32px;
-      width: 80%;
+      width: 50%;
       font-weight: 300;
       font-family: $font-stack;
 
       @include mq("lg") {
-        width: 50%;
+        width: 80%;
       }
     }
   }
 
   .btn-area {
-    @include flex-center;
+    @extend %flex-center;
     gap: 40px;
     width: 20%;
 
@@ -302,26 +324,23 @@
 
     p {
       font-family: "WhiteFlower", sans-serif;
-      font-size: 60px;
+      font-size: 3.75rem;
     }
   }
 }
 
 .about-style {
-  @include flex-center;
+  @extend %flex-center;
   flex-direction: column;
   padding: 8% 0%;
-  gap: 40px;
-  width: 100%;
-  background-color: $background-color;
+  @include gap(60px);
 
   h1 {
     @extend %title-style;
-    font-size: 30px;
+    width: 50%;
 
     @include mq("lg") {
-      font-size: 80px;
-      width: 50%;
+      width: 100%;
     }
   }
 
@@ -331,31 +350,19 @@
     border: 0.5px solid $accent-color;
   }
 
-  p {
-    margin: 0 auto;
-
-    @include mq("lg") {
-      width: 40%;
-    }
-  }
-
   button {
     @include button-style;
   }
 
   .container {
-    margin-top: 5%;
+    @extend %flex-center;
     width: 80%;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
     margin: auto;
+    @include gap(100px);
 
     @include mq("lg") {
-      flex-direction: row;
-      gap: 100px;
+      flex-direction: column;
     }
   }
 
@@ -390,31 +397,42 @@
 }
 
 .about-class {
-  background-color: $background-color;
   width: 100%;
 
   .about-class-container {
-    margin: 0 auto;
     padding: 70px 0;
-    width: 90%;
     background-color: $background-color-2;
+    width: 90%;
+    margin: 0 auto;
+
+    @include mq("lg") {
+      width: 100%;
+    }
   }
 
   .class-content {
-    @include flex-center;
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
+    @extend %flex-center;
+    flex-direction: row;
+    @include gap(40px);
     padding: 50px;
 
     @include mq("lg") {
-      gap: 40px;
-      flex-direction: row;
+      flex-direction: column;
+    }
+  }
+
+  .all-classes-btn-container {
+    @extend %flex-center;
+    width: 100%;
+    justify-content: flex-start;
+
+    @include mq("lg") {
+      justify-content: center;
     }
   }
 
   .about-class-left {
-    @include flex-center;
+    @extend %flex-center;
     flex-direction: column;
   }
 
@@ -423,20 +441,20 @@
     flex-direction: row;
     justify-content: space-between;
     text-align: start;
-    align-items: center;
     padding: 4%;
-    width: 600px;
     cursor: pointer;
+    @include gap(20px);
+
+    @include mq("lg") {
+      padding: 0%;
+      flex-direction: column;
+    }
 
     h3 {
       @extend %title-style;
       letter-spacing: 3px;
-      font-size: 30px;
+      font-size: 2rem;
       font-weight: 400;
-    }
-
-    p {
-      font-size: 18px;
     }
 
     &:hover {
@@ -444,15 +462,29 @@
     }
   }
 
+  .class-desc-right {
+    @extend %flex-center;
+
+    p {
+      font-family: $font-stack;
+      display: none;
+      @include mq("lg") {
+        display: block;
+      }
+    }
+  }
+
+  .class-desc-left {
+    display: flex;
+    flex-direction: column;
+    @include gap(20px);
+  }
+
   .class-title {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
-  }
-
-  .class-detail {
-    width: 450px;
+    @include gap(20px);
   }
 
   .class-btn {
@@ -462,12 +494,6 @@
 
   h1 {
     @extend %title-style;
-    font-size: 30px;
-
-    @include mq("lg") {
-      font-size: 80px;
-      width: 50%;
-    }
   }
 
   button {
@@ -478,12 +504,12 @@
   .class-content-left {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    @include gap(20px);
   }
 
   .class-images {
     display: grid;
-    gap: 20px;
+    @include gap(20px);
     justify-items: center;
     align-items: center;
 
@@ -492,19 +518,24 @@
       height: auto;
     }
   }
+
+  .about-class-right {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 .about-diy {
   padding: 7% 0% 15% 0%;
-  @include flex-center;
+  @extend %flex-center;
   flex-direction: column;
-  gap: 70px;
-  background-color: $background-color;
-  width: 100%;
+  @include gap(70px);
 
   h1 {
     @extend %title-style;
-    font-size: 50px;
+    font-size: 3.125rem;
     letter-spacing: 3px;
   }
 
@@ -513,32 +544,85 @@
   }
 
   .diy-images {
-    @include flex-center;
-    gap: 40px;
+    display: flex;
+    gap: 16px;
+  }
+}
 
-    img {
-      max-width: 100%;
-      height: auto;
+.video-container {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+
+  iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 5%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 1001px) {
+  .video-container {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .diy-images {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    width: 80%;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .video-container {
+    flex: 0 0 100%;
+    height: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+
+    iframe {
+      border-radius: 0%;
     }
   }
 }
 
 .contact {
-  background-color: $background-color;
-  width: 100%;
-  padding-bottom: 10%;
-  @include flex-center;
+  @extend %flex-center;
   flex-direction: column;
-  gap: 40px;
+  width: 100%;
+  @include gap(40px);
 
   h1 {
     @extend %title-style;
-    font-size: 80px;
   }
 
   p {
-    margin: 0 auto;
-    width: 60%;
+    width: 90%;
+
+    @include mq("lg") {
+      width: 60%;
+    }
   }
 
   .submit-button {
@@ -553,25 +637,26 @@
 .form-container {
   background-color: $background-color-2;
   padding: 60px;
-  width: 80%;
+  width: 60%;
 
-  @include mq("lg") {
-    width: 60%;
+  @include mq("md") {
+    width: 100%;
+    padding: 20px;
   }
 
   h2 {
     font-weight: 400;
     color: black;
-    font-size: 35px;
+    font-size: 2rem;
   }
 }
 
 #services-form {
-  gap: 20px;
+  @include gap(20px);
   text-align: left;
 
   label {
-    font-size: 35px;
+    font-size: 2rem;
   }
 
   .event-option {
@@ -583,6 +668,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
+    font-family: $font-stack;
+
+    @include mq("lg") {
+      width: 100%;
+    } 
 
     img {
       display: none;
@@ -621,17 +711,23 @@
 
   .section-row {
     display: flex;
+    flex-direction: row;
     margin-top: 8%;
-    gap: 20px;
+    @include gap(20px);
+
+    @include mq("lg") {
+      flex-direction: column;
+      gap: 30px;
+    }
   }
 
   .checkbox-label {
-    font-size: 18px;
+    font-size: 1.2rem;
     font-family: $paragraph-font;
   }
 
   .radio-label {
-    font-size: 18px;
+    font-size: 1.2rem;
     margin-top: 25px;
     font-family: $paragraph-font;
   }
@@ -653,7 +749,12 @@
 .event-type {
   margin-top: 4%;
   display: flex;
+  flex-direction: row;
   gap: 10px;
+
+  @include mq("lg") {
+    flex-direction: column;
+  }
 }
 
 #event-date,
@@ -671,7 +772,7 @@ input[type="date"],
 select {
   width: 100%;
   padding: 8px;
-  font-size: 14px;
+  font-size: 0.9rem;
   border: 1px solid #e2d3d0;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -681,7 +782,7 @@ select {
 .radio-label {
   display: flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 0.9rem;
   margin-top: 5px;
   cursor: pointer;
 }
@@ -692,10 +793,7 @@ select {
 }
 
 .button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  @extend %flex-center;
   margin-top: 20px;
 }
 
