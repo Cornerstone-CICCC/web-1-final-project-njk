@@ -108,7 +108,73 @@ body {
     background: transparent;
   }
 
-  button {
+  .message-box {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    top: 65%;
+    right: 0px;
+    position: fixed;
+
+    @media (max-width: 1100px) {
+      top: 60%;
+    }
+
+    @media (max-width: 900px) {
+      top: 50%;
+    }
+
+    @media (max-width: 490px) {
+      top: 30%;
+    }
+  }
+
+  .chat-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+    cursor: pointer;
+    transition: transform 0.3s;
+    @extend %flex-center;
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .icon-container.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .icon {
+    background-color: transparent;
+    border: none;
+    width: 50px;
+    height: 50px;
+    @extend %flex-center;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .consultation-btn {
     color: $background-color;
     font-size: 1.2rem;
     background-color: transparent;
@@ -127,7 +193,7 @@ body {
 
     @include mq("lg") {
       padding: 8px 20px;
-    } 
+    }
   }
 }
 
@@ -672,7 +738,7 @@ body {
 
     @include mq("lg") {
       width: 100%;
-    } 
+    }
 
     img {
       display: none;
