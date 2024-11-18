@@ -1,0 +1,15 @@
+@import './partials/home';
+@import './partials/header';
+@import './partials/footer';
+@import './partials/portfolio';
+@import './partials/variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
