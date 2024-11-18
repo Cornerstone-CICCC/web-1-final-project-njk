@@ -1,0 +1,225 @@
+body {
+    background-color: white;
+
+}
+
+section.our_services h1{
+font-family: "Baskervville";
+font-size: 80px;
+font-weight: 400;
+letter-spacing: 0.13em;
+text-align: center;
+text-decoration-skip-ink: none;
+color: #725A58;
+
+}
+
+section.our_services span{
+    height: 1px;
+    background-color: black ;
+}
+
+section.our_services p{
+    font-family: 'Avenir', sans-serif;                                                 
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+    text-decoration-skip-ink: none;
+    margin-top: 36px;
+
+}
+
+
+
+.Service{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+    background-color:  #FAE9E7;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.services_1{
+    display: flex;
+    max-width: 1024px;
+ 
+}
+
+.section1{
+    margin-left: 80px;
+}
+
+
+
+.section1 p{
+    color: #191919;
+    font-size: 18px;
+   
+}
+
+
+.section1 h2{
+    font-size: 40px;
+    color: #725A58;
+    font-family: "Baskervville", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.section1 h4{
+    font-family: "Baskervville", serif;
+    font-size: 29px;
+    font-weight: 400;
+    text-align: left;
+    color: #000000;
+    margin-top: 0;
+
+}
+
+.section1_icons span{
+    display: flex;
+    gap: 10px;
+}
+
+
+.section1_icons span img{
+    margin-left: 10px;
+}
+.section1_icons{
+    display: flex;
+    gap: 24px;
+}
+
+.section1 h2{
+    width: 242px;
+    font-size: 40px;
+}
+
+.section1 a {
+    display: inline-block;
+    text-decoration: none;
+    border: 0.8px solid #5E4A49;
+    color: #5E4A49;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-right: 25px;
+    padding-bottom: 20px;
+    padding-left: 32px;
+}
+
+.section1 a:hover{
+    background-color: #ffe5ec;
+    color: black;
+    transition: 0.2s ease-in-out;
+}
+
+hr{
+    margin-top: -30px;
+    color: #E3B6B1;
+}
+
+.section1_icons span img {
+    width: 21px;
+    height: 22px;
+    margin-top: 16px;
+}
+
+.message_box{
+    display: flex;
+}
+i.fa-regular.fa-comments{
+    display: flex;
+    
+
+}
+
+
+img.chat\.icon{
+    position: absolute;
+    top: 420px; 
+    right: 7px; 
+    width: 50px; 
+    height: auto;
+    cursor: pointer;
+    z-index: 1000; 
+    
+}
+
+
+
+
+@media (max-width: 1440px) {
+    .Service {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        gap: 20px;
+    }
+
+    .services_1 {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0; /* Reset marg
+        in for center alignment */
+    }
+
+    .section1 {
+        margin-left: 0;
+        text-align: center; /* Center text for better readability */
+        padding: 0 20px; /* Add padding for better spacing */
+    }
+
+    .section1 h2 {
+        font-size: 32px; /* Reduce heading size */
+        width: auto;
+    }
+
+    .section1 p, .section1 h4 {
+        font-size: 16px; /* Adjust font size for readability */
+    }
+
+    .section1 a {
+        padding: 15px 20px; /* Adjust padding for buttons */
+        font-size: 18px; /* Reduce button font size */
+    }
+
+    .section1_icons {
+        flex-direction: column; /* Stack icons vertically */
+        gap: 10px;
+    }
+
+    .section1_icons span {
+        justify-content: center;
+    }
+
+    .section1_icons span img {
+        margin-top: 0;
+    }
+
+    hr {
+        width: 30%; /* Adjust the width for smaller screens */
+        margin: auto; /* Center the line */
+    }
+
+    .message_box {
+        justify-content: flex-end; /* Align icon to the right */
+        width: 100%; /* Ensure it stretches the width of the screen */
+        padding: 0 10px; /* Add padding for spacing */
+    }
+
+    i.fa-regular.fa-comments {
+        font-size: 24px; /* Adjust icon size */
+    }
+}
+
+@media (min-width: 360px) {
+    
+    .Services{
+        position: fixed;
+        width: 100%;
+    }
+}
