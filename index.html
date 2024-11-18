@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carla Beauty</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Space+Grotesk:wght@300..700&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Space+Grotesk:wght@300..700&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,13 +30,101 @@
     </script>
   </head>
   <body>
-    <div id="header-container"></div>
+    <header>
+      <section class="menu-container">
+        <div class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="offscreen-menu">
+          <div class="header-menu-hidden">
+            <figure class="mobile-menu-logo">
+              <img
+                id="cb_logo_mobile"
+                src="./images/cb_logo.svg"
+                alt="CB Logo"
+              />
+              <img
+                id="cb_logo_name_mobile"
+                src="./images/cb_name.svg"
+                alt="CB Logo Name"
+              />
+            </figure>
+            <div class="mobile-menu-links">
+              <a href="./index.html">Home</a>
+              <a href="./portfolio">My Work</a>
+              <a href="./services.html">Services</a>
+              <a href="#">Classes</a>
+              <a href="#">Beauty Tips</a>
+              <a href="./about.html">About</a>
+              <a href="#">Contact</a>
+            </div>
+            <div class="mobile-menu-socials">
+              <a href="#"
+                ><img src="./images/ph_phone.svg" alt="phone contact"
+              /></a>
+              <a href="#"
+                ><img
+                  src="./images/ic_baseline-whatsapp.svg"
+                  alt="Whatsapp contact"
+              /></a>
+              <a href="#"
+                ><img
+                  src="./images/iconoir_instagram.svg"
+                  alt="Instagram contact"
+              /></a>
+            </div>
+            <div class="mobile-menu-slogan">
+              <p>Expert Makeup and Hairstyle Studio</p>
+            </div>
+          </div>
+        </div>
+        <nav class="menu">
+          <div class="header-menu" id="left-menu">
+            <a href="./index.html">Home</a>
+            <span class="separator"></span>
+            <a href="./portfolio.html">My Work</a>
+            <span class="separator"></span>
+            <a href="./services.html">Services</a>
+            <span class="separator"></span>
+            <a href="#">Classes</a>
+          </div>
+          <figure class="logo">
+            <img id="cb_logo" src="./images/cb_logo.svg" alt="CB Logo" />
+            <img
+              id="cb_logo_name"
+              src="./images/cb_name.svg"
+              alt="CB Logo Name"
+            />
+          </figure>
+          <div class="header-menu" id="right-menu">
+            <a href="#">Beauty Tips</a>
+            <span class="separator"></span>
+            <a href="./about.html">About</a>
+            <span class="separator"></span>
+            <a href="#">Contact</a>
+            <span class="separator"></span>
+          </div>
+          <div class="header-instagram">
+            <a href="#"
+              ><img src="./images/iconoir_instagram.svg" alt="Instagram Page"
+            /></a>
+          </div>
+        </nav>
+      </section>
+    </header>
     <div class="main-content">
       <div class="home-page">
         <div class="hero">
           <div class="message-box">
             <button class="chat-btn">
-              <img src="images/chat_icon.svg" alt="" id="chat-icon" id="chat-icon"/>
+              <img
+                src="images/chat_icon.svg"
+                alt=""
+                id="chat-icon"
+                id="chat-icon"
+              />
             </button>
             <div class="icon-container">
               <button class="icon">
@@ -91,7 +182,12 @@
               Shine effortlessly, embrace your unique features with absolute
               confidence.
             </p>
-            <button class="my-work-btn" onclick="location.href='portfolio.html'">My Work</button>
+            <button
+              class="my-work-btn"
+              onclick="location.href='portfolio.html'"
+            >
+              My Work
+            </button>
           </div>
           <div class="star-image">
             <img src="images/star_1.svg" alt="" />
@@ -377,18 +473,6 @@
       </div>
     </div>
     <div id="footer-container"></div>
-    <script>
-      fetch("header.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("header-container").innerHTML = data;
-        });
-      fetch("footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("footer-container").innerHTML = data;
-        });
-    </script>
     <script src="./script/burger-menu.js"></script>
     <script src="./script/header-shrink.js"></script>
     <script src="./script/home.js"></script>
