@@ -1,6 +1,7 @@
-body {
-    background-color: white;
-
+.our_services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 section.our_services h1{
@@ -14,9 +15,10 @@ color: #725A58;
 
 }
 
-section.our_services span{
-    height: 1px;
-    background-color: black ;
+section.our_services hr {
+    margin: auto 0;
+    border-top: 2px solid #E3B6B1;
+    width: 30%;
 }
 
 section.our_services p{
@@ -81,15 +83,22 @@ section.our_services p{
 
 }
 
-.section1_icons span{
+.section1_icons {
+    margin: .5rem 0;
+}
+
+.section1_icons .service-price{
     display: flex;
+    align-items: center;
     gap: 10px;
 }
 
-
-.section1_icons span img{
-    margin-left: 10px;
+.section1_icons .service-time {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
+
 .section1_icons{
     display: flex;
     gap: 24px;
@@ -118,26 +127,9 @@ section.our_services p{
     transition: 0.2s ease-in-out;
 }
 
-hr{
-    margin-top: -30px;
-    color: #E3B6B1;
-}
-
-.section1_icons span img {
-    width: 21px;
-    height: 22px;
-    margin-top: 16px;
-}
-
 .message_box{
     display: flex;
 }
-i.fa-regular.fa-comments{
-    display: flex;
-    
-
-}
-
 
 img.chat\.icon{
     position: absolute;
@@ -231,6 +223,7 @@ img.chat\.icon{
         align-items: center;
         margin-left: 0; /* Reset marg
         in for center alignment */
+        padding: 0 3rem;
     }
 
     .section1 {
@@ -254,8 +247,9 @@ img.chat\.icon{
     }
 
     .section1_icons {
-        flex-direction: column; /* Stack icons vertically */
-        gap: 10px;
+        display: flex;
+        gap: 24px;
+        margin: 1rem 0;
     }
 
     .section1_icons span {
@@ -268,7 +262,7 @@ img.chat\.icon{
 
     hr {
         width: 30%; /* Adjust the width for smaller screens */
-        margin: auto; /* Center the line */
+        margin: auto 0; 
     }
 
     .message_box {
