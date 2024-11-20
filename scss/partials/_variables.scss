@@ -1,0 +1,31 @@
+/* color */
+$background-color: #fbfafa;
+$background-color-2: #fae9e7;
+$primary-color: #000000;
+$secondary-color: #888888;
+$accent-color: #e3b6b1;
+$bold-main-color: #644f4e;
+$complementary-color: #a06d67;
+$complementary-color-2: #b99692;
+$title-color: #5e4a49;
+$menu-color: #F8F6F4;
+$mobile-menu-color: #f8f6f4b8;
+
+/* font */
+$font-stack: "Baskerville, sans-serif";
+$paragraph-font: "Avenir, sans-serif";
+
+/* media query */
+$sizes: xl, lg, md, sm, xs; 
+$breakpoint: ( 
+  'xs': 'screen and (max-width: 321px)',
+  'sm': 'screen and (max-width: 376px)',
+  'md': 'screen and (max-width: 501px)',
+  'lg': 'screen and (max-width: 961px)',
+  'xl': 'screen and (max-width: 1201px)',
+) !default;
+@mixin mq($size: md) {
+  @media #{ map-get( $breakpoint, $size ) } {
+    @content;
+  }
+}
