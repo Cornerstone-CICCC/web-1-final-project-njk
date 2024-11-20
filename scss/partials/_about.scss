@@ -1,4 +1,9 @@
-@import '../partials/variables';
+body{
+    margin: 0;
+    background-color: white;
+    width: 100%;
+    
+}
 
 
 .heading{
@@ -6,7 +11,10 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    // gap: 40px;
     background-color:  white;
+    // padding-top: 80px;
+    // padding-bottom: 80px;
 
 
 
@@ -15,6 +23,7 @@
         font-size: 40px;
         font-weight: 400;
         letter-spacing: 0.13em;
+        text-align: center;
         text-decoration-skip-ink: none;
         color: #E3B6B1;
         margin-bottom: 20px;
@@ -56,25 +65,33 @@
         margin-left: 200px;
     }
 
+}
+
+
+
 .about_content {
 
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    // margin-right: 200px;
     max-width: 50%;
     
 
 
-    h4{
+    h3{
+        // top: 687px;
+        // right: 235px;
         font-family: "Baskervville", serif;
-        display: flex;
-        flex-wrap: wrap;
         font-size: 48px;
         font-weight: 400;
         color: #725A58;
         margin-top: 0;
-        margin-right: auto;    
+        margin-right: auto;
+        justify-content: center;
+
+    
     }
 
 
@@ -123,52 +140,35 @@ img.chat\.icon{
     
 }
 
-}
+// .chat-icon {
+//     position: fixed;
+//     top: 50%; /* Adjust to vertically center or place it as needed */
+//     left: 0; /* Stick it to the left side of the page */
+//     transform: translateY(-50%); /* Center the icon vertically */
+//     max-width: 50px; /* Limit the width to ensure it doesn't overflow */
+//     max-height: 50px; /* Ensure height is within bounds */
+//     z-index: 1000; /* Place it above other content */
+// }
 
-.brand-list-about {
-    color: $secondary-color;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    margin: 2.5rem 0;
+// @media all and (max-width: 430px) { //this means that any screen less that 360 should have the sass styles affecting it.
+//   *{
+//     margin: 0;
+//     box-sizing: border-box;
+//     padding: 0;
+//   }
 
-    .brand-title {
-        display: flex;
-        align-items: center;
-        font-size: 3rem;
-        color: $bold-main-color;
-        font-weight: 400;
-        }
+//   body{
+//     margin: auto;
+//     // box-sizing: border-box;
+//   }
+  
+
+//   .about_content{
     
-    .title {
-      position: relative;
-      display: inline-block;
-      padding: 0 10px;
-      margin-bottom: 40px;
-    .brand-title {
-        font-size: 6rem;
-    }
-      
-    }
-  
-    .brand-list-images {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 60px;
-      justify-items: center;
-      align-items: center;
-  
-      @include mq("md") {
-        grid-template-columns: repeat(2, 1fr);
-      }
-  
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-    }
-  }
+//   }
+
+// }
+
 
 
 
@@ -198,23 +198,25 @@ img.chat\.icon{
 
         img {
             max-width: 80%;
-            margin: 0;
+            margin: 0 auto;
         }
     }
 
     .about_content {
+        max-width: 100%;
         margin: 0;
         padding: 0 20px;
-        max-width: 90%;
 
-        h4 {
+        h3 {
             font-size: 36px;
             text-align: center;
             margin-right: 0;
+            text-align: justify;
         }
 
         p {
             font-size: 16px;
+            text-align: justify;
         }
 
         a {
@@ -225,71 +227,7 @@ img.chat\.icon{
     }
 }
 
-.message-box {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    top: 65%;
-    z-index: 100;
-    right: 0px;
-    position: fixed;
 
-    @media (max-width: 1100px) {
-      top: 60%;
-    }
-
-    @media (max-width: 900px) {
-      top: 50%;
-    }
-
-    @media (max-width: 490px) {
-      top: 30%;
-    }
-  }
-
-  .chat-btn {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    cursor: pointer;
-    transition: transform 0.3s;
-    @extend %flex-center;
-
-    img {
-      width: 50px;
-      height: 50px;
-    }
-  }
-
-  .icon-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s, transform 0.3s;
-  }
-
-  .icon-container.open {
-    opacity: 1;
-    pointer-events: all;
-  }
-
-  .icon {
-    background-color: transparent;
-    border: none;
-    width: 50px;
-    height: 50px;
-    @extend %flex-center;
-    cursor: pointer;
-    transition: transform 0.3s;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-  }
 
 @media (max-width: 768px) {
     .heading {
@@ -307,11 +245,15 @@ img.chat\.icon{
         opacity: 0;
     }
 
+    .about {
+        // padding: 20px;
+        // gap: 20px;
+    }
 
     .about_content {
-        max-width: 90%;
-        h4{
+        h3 {
             font-size: 28px;
+            text-align: justify;
         }
 
         p {
@@ -355,11 +297,12 @@ img.chat\.icon{
     .about_content {
         padding-left: 0;
         margin-left: 10px;
-        max-width: 90%;
 
-        h4 {
+
+        h3 {
             font-size: 24px;
             margin-right: auto;
+            text-align: justify;
         }
 
         p {
@@ -403,8 +346,7 @@ img.chat\.icon{
 
     .about_content {
         padding-left: 0;
-        max-width: 50%;
-        h4 {
+        h3 {
             font-size: 20px;
         }
 
@@ -420,4 +362,3 @@ img.chat\.icon{
         }
     }
 }
-
